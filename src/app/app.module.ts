@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { Solicitacao } from './matricula-on-line/solicitacao/solicitacao.component';
 import { MatriculaOnLineModule } from './matricula-on-line/matricula-on-line.module';
 import { Servicos } from './servicos/servicos.component';
+import { CommonModule } from '@angular/common'; 
 
 @NgModule({
   declarations: [
@@ -15,7 +16,9 @@ import { Servicos } from './servicos/servicos.component';
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
+    
     MatriculaOnLineModule,
     RouterModule.forRoot([
       { path: '', component: Servicos },
