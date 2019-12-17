@@ -11,6 +11,11 @@ import { ConditionalExpr } from '@angular/compiler';
 export class Solicitacao implements OnInit{
 
   title = 'cartorio-facil-app';
+  estados = ['SP', 'DF', 'MG'];
+  pedido: any = []; 
+  imovel: any = [];
+  listaImoveis: Array<any> = [];
+
   constructor(
     private route: ActivatedRoute,
   ) { }
@@ -18,11 +23,7 @@ export class Solicitacao implements OnInit{
   passo1: boolean = true;
   passo2: boolean = false;
 
-  nomeSolicitante: string = '';
-  email: string = '';
-  celular: number = 0;
-
-  objCadastro: any = {};
+  model: any = {};
     
   ngOnInit() {
   
@@ -32,14 +33,18 @@ export class Solicitacao implements OnInit{
       
       this.passo1 = false;
       this.passo2 = true;
-      this.objCadastro.nomeSolicitante = this.nomeSolicitante;
-      this.objCadastro.email = this.email;
-      this.objCadastro.celular =  this.celular;
-      this.nomeSolicitante
+   
       console.log("chegou");
-      console.log(this.passo1);
+      console.log(this.model);
       console.log(this.passo2); 
   } 
+
+
+  finalizar(){
+    this.listaImoveis.push(this.imovel);
+    this.model.listaPedidos = this.listaImoveis;
+    console.log(this.model);
+  }
 
 
 
