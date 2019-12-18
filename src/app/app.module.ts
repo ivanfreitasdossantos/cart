@@ -8,6 +8,7 @@ import { Solicitacao } from './matricula-on-line/solicitacao/solicitacao.compone
 import { MatriculaOnLineModule } from './matricula-on-line/matricula-on-line.module';
 import { Servicos } from './servicos/servicos.component';
 import { CommonModule } from '@angular/common'; 
+import { DetalheSolicitacaoComponent } from './matricula-on-line/detalhe-solicitacao/detalhe-solicitacao.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CommonModule } from '@angular/common';
     MatriculaOnLineModule,
     RouterModule.forRoot([
       { path: '', component: Servicos },
-      { path: 'matricula-on-line', component: Solicitacao }
+      { path: 'matricula-on-line', component: Solicitacao },
+      { path: 'detalhe-solicitacao', component: DetalheSolicitacaoComponent }
     ])
   ],
   providers: [],

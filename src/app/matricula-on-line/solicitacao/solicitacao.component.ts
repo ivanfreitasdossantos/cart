@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import {  Router,  ParamMap, ActivatedRoute } from '@angular/router';
 import { ConditionalExpr } from '@angular/compiler';
+import { PedidoMatriculaService } from '../pedido-matricula.service';
 
 
 @Component({
@@ -14,10 +15,12 @@ export class Solicitacao implements OnInit{
   estados = ['SP', 'DF', 'MG'];
   pedido: any = []; 
   imovel: any = [];
-  listaImoveis: Array<any> = [];
+
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router, 
+    private pedidoService : PedidoMatriculaService
   ) { }
 
   passo1: boolean = true;
@@ -33,19 +36,16 @@ export class Solicitacao implements OnInit{
       
       this.passo1 = false;
       this.passo2 = true;
-   
+      this.pedidoService.addSolicitante(this.model);
+      
       console.log("chegou");
-      console.log(this.model);
-      console.log(this.passo2); 
+ 
   } 
 
 
   finalizar(){
-    this.listaImoveis.push(this.imovel);
-    this.model.listaPedidos = this.listaImoveis;
-    console.log(this.model);
+    this.pedidoService.addList(this.imovel);
+    this.router.navigate(['/detalhe-solicitacao', { }])
   }
-
-
 
 }
