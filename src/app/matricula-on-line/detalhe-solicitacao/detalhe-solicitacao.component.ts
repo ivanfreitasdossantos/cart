@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PedidoMatriculaService } from '../pedido-matricula.service';
+import { faEdit } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-detalhe-solicitacao',
@@ -7,7 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetalheSolicitacaoComponent implements OnInit {
 
-  constructor() { }
+  solicitacao;
+  faEedit = faEdit;
+
+  constructor(private pedidoService : PedidoMatriculaService) { 
+
+    this.solicitacao = pedidoService.getSolicitacao();
+    console.log(this.solicitacao);
+  }
 
   ngOnInit() {
   }

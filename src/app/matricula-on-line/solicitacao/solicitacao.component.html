@@ -1,7 +1,7 @@
 <div class="row">
 <div class="col">
   <form>
-      <fieldset *ngIf="passo1" >
+      <fieldset >
         <legend>Dados do Solicitante</legend>
         <div class="form-group" >
         <label for="nome">Nome Solicitante</label>
@@ -21,50 +21,7 @@
         </div>
 
         <button type="button" class="btn btn-primary" (click)="adicionarEndereco()">Adicionar endereço >></button>
-      </fieldset>
-
-
-    <fieldset *ngIf="passo2">
-      <legend>Dados do Imovel</legend>
-
-         <div class="form-group">
-          <label for="Cidade">Cidade</label>
-          <input type="text" [(ngModel)]="imovel.cidade" name="cidade" class="form-control" id="cidade" aria-describedby="emailHelp">
-          <small id="emailHelp" class="form-text text-muted"></small>
-        </div>
-    
-        <div class="form-group">
-          <label for="endereco">Endereço do Imóvel</label>
-          <input type="text" [(ngModel)]="imovel.endereco" name="endereco" class="form-control" id="endereco" aria-describedby="emailHelp">
-          <small id="endereco" class="form-text text-muted"></small>
-        </div>
-    
-        <div class="form-group">
-          <label for="exampleInputEmail1">Estado</label>
-            <select class="form-control"  id="power" required  [(ngModel)]="imovel.estado" name="cidade">
-                <option *ngFor="let estado of estados" [value]="estado">{{estado}}</option>
-            </select>
-          <small id="emailHelp" class="form-text text-muted"></small>
-        </div>
-    
-        <div class="form-group">
-          <label for="exampleInputEmail1">Cartorio de Registro de Imovel</label>
-          <input type="text" [(ngModel)]="imovel.nomeCartorio" name="nomeCartorio" class="form-control" id="nomeCartorio" aria-describedby="emailHelp">
-          <small id="emailHelp" class="form-text text-muted"></small>
-        </div>
-    
-        <div class="form-group">
-          <label for="exampleInputEmail1">Número da Matrícula</label>
-          <input type="text" [(ngModel)]="imovel.numMatricula" name="numMatricula" class="form-control" id="numMatricula" aria-describedby="emailHelp">
-          <small id="emailHelp" class="form-text text-muted"></small>
-        </div>
-
-        <button type="button" class="btn btn-primary" (click)="finalizar()">Finalizar</button>
-        <button type="button" class="btn btn-primary" (click)="addNovo()">Incluir Novo</button>
-
-    </fieldset>
-
-    
+      </fieldset>    
     
  
 </form>

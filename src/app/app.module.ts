@@ -9,6 +9,8 @@ import { MatriculaOnLineModule } from './matricula-on-line/matricula-on-line.mod
 import { Servicos } from './servicos/servicos.component';
 import { CommonModule } from '@angular/common'; 
 import { DetalheSolicitacaoComponent } from './matricula-on-line/detalhe-solicitacao/detalhe-solicitacao.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FormMatriculaComponent } from './matricula-on-line/form-matricula/form-matricula.component';
 
 @NgModule({
   declarations: [
@@ -19,11 +21,12 @@ import { DetalheSolicitacaoComponent } from './matricula-on-line/detalhe-solicit
     BrowserModule,
     CommonModule,
     AppRoutingModule,
-    
+    FontAwesomeModule,
     MatriculaOnLineModule,
     RouterModule.forRoot([
       { path: '', component: Servicos },
       { path: 'matricula-on-line', component: Solicitacao },
+      { path: 'form-matricula', component:  FormMatriculaComponent},
       { path: 'detalhe-solicitacao', component: DetalheSolicitacaoComponent }
     ])
   ],

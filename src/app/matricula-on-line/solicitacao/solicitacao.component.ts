@@ -34,18 +34,12 @@ export class Solicitacao implements OnInit{
 
   adicionarEndereco() {
       
-      this.passo1 = false;
-      this.passo2 = true;
       this.pedidoService.addSolicitante(this.model);
-      
+      this.router.navigate(['/form-matricula', { }])
       console.log("chegou");
  
   } 
 
 
-  finalizar(){
-    this.pedidoService.addList(this.imovel);
-    this.router.navigate(['/detalhe-solicitacao', { }])
-  }
 
 }
