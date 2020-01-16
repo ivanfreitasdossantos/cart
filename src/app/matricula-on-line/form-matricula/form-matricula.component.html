@@ -5,7 +5,7 @@
               <legend>Dados do Imovel</legend>
         
                  <div class="form-group">
-                  <label for="Cidade">Cidade</label>
+                  <label for="cidade">Cidade</label>
                   <input type="text" [(ngModel)]="imovel.cidade" name="cidade" class="form-control" id="cidade" aria-describedby="emailHelp">
                   <small id="emailHelp" class="form-text text-muted"></small>
                 </div>
@@ -18,12 +18,23 @@
             
                 <div class="form-group">
                   <label for="exampleInputEmail1">Estado</label>
-                    <select class="form-control"  id="power" required  [(ngModel)]="imovel.estado" name="cidade">
+                    <select class="form-control "  id="power" required  [(ngModel)]="imovel.estado" name="cidade">
                         <option *ngFor="let estado of estados" [value]="estado">{{estado}}</option>
                     </select>
                   <small id="emailHelp" class="form-text text-muted"></small>
+
                 </div>
-            
+                <div class="col-12 input-field col s12">
+                        <select>
+                          <option value="" disabled selected>Choose your option</option>
+                          <option value="1">Option 1</option>
+                          <option value="2">Option 2</option>
+                          <option value="3">Option 3</option>
+                        </select>
+                        <label>Materialize Select</label>
+                      </div>
+
+                      
                 <div class="form-group">
                   <label for="exampleInputEmail1">Cartorio de Registro de Imovel</label>
                   <input type="text" [(ngModel)]="imovel.nomeCartorio" name="nomeCartorio" class="form-control" id="nomeCartorio" aria-describedby="emailHelp">
@@ -35,10 +46,11 @@
                   <input type="text" [(ngModel)]="imovel.numMatricula" name="numMatricula" class="form-control" id="numMatricula" aria-describedby="emailHelp">
                   <small id="emailHelp" class="form-text text-muted"></small>
                 </div>
-        
-                <button type="button" class="btn btn-primary" (click)="finalizar()">Finalizar</button>
-                <button type="button" class="btn btn-primary" (click)="addNovo()">Incluir Novo</button>
-        
+                
+                <div class="col-12 text-right">
+                    <button type="button" class="btn btn-primary" (click)="finalizar()">Adicionar</button>
+                </div>
+
             </fieldset>
         
             

@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {  Router,  ParamMap, ActivatedRoute } from '@angular/router';
+import { Component, OnInit, Input } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 import { ConditionalExpr } from '@angular/compiler';
 import { PedidoMatriculaService } from '../pedido-matricula.service';
 
@@ -18,9 +18,7 @@ export class Solicitacao implements OnInit{
 
 
   constructor(
-    private route: ActivatedRoute,
-    private router: Router, 
-    private pedidoService : PedidoMatriculaService
+    private route: ActivatedRoute, private pedidoService : PedidoMatriculaService, private router: Router 
   ) { }
 
   passo1: boolean = true;
@@ -32,14 +30,15 @@ export class Solicitacao implements OnInit{
   
   }
 
+
+
   adicionarEndereco() {
       
+      this.passo1 = false;
+      this.passo2 = true;
       this.pedidoService.addSolicitante(this.model);
-      this.router.navigate(['/form-matricula', { }])
-      console.log("chegou");
- 
+      
+      this.router.navigate(['/form-matricula', { }]);
   } 
-
-
 
 }

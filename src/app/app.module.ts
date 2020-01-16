@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
 import { DetalheSolicitacaoComponent } from './matricula-on-line/detalhe-solicitacao/detalhe-solicitacao.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormMatriculaComponent } from './matricula-on-line/form-matricula/form-matricula.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -19,8 +20,10 @@ import { FormMatriculaComponent } from './matricula-on-line/form-matricula/form-
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     CommonModule,
     AppRoutingModule,
+    RouterModule,
     FontAwesomeModule,
     MatriculaOnLineModule,
     RouterModule.forRoot([
@@ -28,7 +31,8 @@ import { FormMatriculaComponent } from './matricula-on-line/form-matricula/form-
       { path: 'matricula-on-line', component: Solicitacao },
       { path: 'form-matricula', component:  FormMatriculaComponent},
       { path: 'detalhe-solicitacao', component: DetalheSolicitacaoComponent }
-    ])
+    ]),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {  Router,  ParamMap, ActivatedRoute } from '@angular/router';
 import { PedidoMatriculaService } from '../pedido-matricula.service';
+import {MatInputModule} from '@angular/material/input';
 
 @Component({
   selector: 'app-form-matricula',
