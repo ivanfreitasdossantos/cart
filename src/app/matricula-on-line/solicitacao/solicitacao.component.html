@@ -9,26 +9,30 @@
   <div class="col">
 
       <form class="example-form">
-          <div class="form-group" >
-            <mat-form-field class="example-full-width" >
-              <input matInput placeholder="Favorite food" [(ngModel)]="model.nomeSolicitante"  value="Sushi" [ngModelOptions]="{standalone: true}">
-            </mat-form-field>
-          </div>
-        <mat-form-field class="example-full-width">
-          <input matInput placeholder="Favorite food" value="Sushi">
+
+        <mat-form-field class="full-width" >
+          <input matInput placeholder="Nome" [(ngModel)]="model.nomeSolicitante"  value="Sushi" [ngModelOptions]="{standalone: true}">
+        </mat-form-field>
+        
+        <mat-form-field class="full-width">
+          <input matInput placeholder="Email" [(ngModel)]="model.email" name="email"  aria-describedby="email" [ngModelOptions]="{standalone: true}">
         </mat-form-field>
 
-        <mat-form-field class="example-full-width">
-          <input matInput placeholder="Favorite food" value="Sushi">
+        <mat-form-field class="full-width">
+          <input matInput placeholder="Celular" [(ngModel)]="model.celular" name="celular"  id="celular" aria-describedby="celular" [ngModelOptions]="{standalone: true}">
         </mat-form-field>
+
+        <div class="col-12 text-right">
+            <button type="button" class="btn btn-primary" (click)="adicionarEndereco()">Proximo Passo</button>
+        </div>    
         
       </form>
         
 
-    <form>
+  <!--   <form>
           <div class="form-group" >
             <label for="nome">Nome Solicitante</label>
-           <!--  <input type="text" [(ngModel)]="model.nomeSolicitante" name="nome"  class="form-control" aria-describedby="nome" [ngModelOptions]="{standalone: true}"> -->
+            <input type="text" [(ngModel)]="model.nomeSolicitante" name="nome"  class="form-control" aria-describedby="nome" [ngModelOptions]="{standalone: true}">
             <small id="nomeSolicitante" class="form-text text-muted"></small>
         </div>
         <div class="form-group">
@@ -46,6 +50,6 @@
           <div class="col-12 text-right">
             <button type="button" class="btn btn-primary" (click)="adicionarEndereco()">Proximo Passo</button>
           </div>    
-     </form>
+     </form> -->
   </div>
 </div>
