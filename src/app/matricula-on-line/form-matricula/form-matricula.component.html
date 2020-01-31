@@ -1,61 +1,66 @@
 <div class="row">
+    <div class="col-12">
+      <h3 class="mt-10 titulo-pagina">Imóvel</h3>
+      <p>Dados do Imovél</p>
+    </div>
+</div>
+
+<div class="row">
         <div class="col">
           <form>
-            <fieldset>
-              <legend>Dados do Imovel</legend>
-        
-                 <div class="form-group">
-                  <label for="cidade">Cidade</label>
-                  <input type="text" [(ngModel)]="imovel.cidade" name="cidade" class="form-control" id="cidade" aria-describedby="emailHelp">
-                  <small id="emailHelp" class="form-text text-muted"></small>
-                </div>
-            
-                <div class="form-group">
-                  <label for="endereco">Endereço do Imóvel</label>
-                  <input type="text" [(ngModel)]="imovel.endereco" name="endereco" class="form-control" id="endereco" aria-describedby="emailHelp">
-                  <small id="endereco" class="form-text text-muted"></small>
-                </div>
-            
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Estado</label>
-                    <select class="form-control "  id="power" required  [(ngModel)]="imovel.estado" name="cidade">
-                        <option *ngFor="let estado of estados" [value]="estado">{{estado}}</option>
-                    </select>
-                  <small id="emailHelp" class="form-text text-muted"></small>
+                <mat-form-field class="full-width" >
+                  <input matInput placeholder="Cidade"  type="text" [formControl] = "cidade"  [(ngModel)]="imovel.cidade" name="cidade" id="cidade" aria-describedby="cidade">
+                </mat-form-field>
 
-                </div>
-                <div class="col-12 input-field col s12">
-                        <select>
-                          <option value="" disabled selected>Choose your option</option>
-                          <option value="1">Option 1</option>
-                          <option value="2">Option 2</option>
-                          <option value="3">Option 3</option>
-                        </select>
-                        <label>Materialize Select</label>
-                      </div>
+                <mat-form-field class="full-width" >
+                    <input matInput placeholder="Endereço do Imóvel" [formControl] = "endereco"  [(ngModel)]="imovel.endereco" >
+                </mat-form-field>
 
-                      
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Cartorio de Registro de Imovel</label>
-                  <input type="text" [(ngModel)]="imovel.nomeCartorio" name="nomeCartorio" class="form-control" id="nomeCartorio" aria-describedby="emailHelp">
-                  <small id="emailHelp" class="form-text text-muted"></small>
-                </div>
-            
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Número da Matrícula</label>
-                  <input type="text" [(ngModel)]="imovel.numMatricula" name="numMatricula" class="form-control" id="numMatricula" aria-describedby="emailHelp">
-                  <small id="emailHelp" class="form-text text-muted"></small>
-                </div>
+                <mat-form-field  class="full-width">
+                    <mat-label>Estado</mat-label>
+                    <mat-select [formControl]="estado" name="estado" [(ngModel)]="imovel.estado">
+                      <mat-option *ngFor="let estado of estados" [(value)]="estado" name="estado"  >
+                        {{estado}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                
+                <mat-form-field class="full-width" >
+                    <input matInput placeholder="Cartório de Registro de Imóvel" [formControl] = "cartorioRegistro"  [(ngModel)]="imovel.nomeCartorio"  >
+                </mat-form-field>
+
+                <mat-form-field class="full-width" >
+                    <input matInput placeholder="Número da Matrícula" [formControl] = "numeroMatricula" [(ngModel)]="imovel.numMatricula">
+                </mat-form-field>
+
                 
                 <div class="col-12 text-right">
                     <button type="button" class="btn btn-primary" (click)="finalizar()">Adicionar</button>
                 </div>
-
-            </fieldset>
-        
-            
-            
          
         </form>
+
+
+        <!-- <form class="example-form">
+
+            <mat-form-field class="full-width" >
+              <input matInput placeholder="Nome" [(ngModel)]="model.nomeSolicitante"  value="Sushi" [ngModelOptions]="{standalone: true}">
+            </mat-form-field>
+            
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Email" [(ngModel)]="model.email" name="email"  aria-describedby="email" [ngModelOptions]="{standalone: true}">
+            </mat-form-field>
+    
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Celular" [(ngModel)]="model.celular" name="celular"  id="celular" aria-describedby="celular" [ngModelOptions]="{standalone: true}">
+            </mat-form-field>
+    
+            <div class="col-12 text-right">
+                <button type="button" class="btn btn-primary" (click)="adicionarEndereco()">Proximo Passo</button>
+            </div>    
+            
+          </form> -->
+        
+
     </div>
 </div>

@@ -1,31 +1,26 @@
 
 <!-- Toolbar -->
-<nav class="background-azul container">
-  <div class="row">
+<nav class="navbar navbar-dark background-azul ">
+  <div class="container "style="height: calc(100% - 87px)">
+    <div class="row">
 
-        <div class="col-6">
-              <h6><a class="navbar-brand" href="#">Cartório Facil</a></h6>
-        </div>
-        <div class="col-6 text-right">
-          <img src="../assets/img/carrinho.svg">
-        </div>
-     
+          <div class="col-12">
+                <h6><a class="navbar-brand" href="#">Cartório Facil</a></h6>
+          </div>
+        <!--   <div class="col-12 text-right">
+            <img src="../assets/img/carrinho.svg">
+          </div> -->
+      
+    </div>
   </div>
-
 
 </nav>
 
 
-<div class="container">
+<div class="container " style="height: calc(100% - 108px);">
   <router-outlet></router-outlet>
 </div>
 
-<footer>
-
+<footer class="footer navbar-fixed-bottom background-azul" style="height: 50px;">
+alo
 </footer>
-<script>
- document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('select');
-    var instances = M.FormSelect.init(elems, options);
-  });
-</script>

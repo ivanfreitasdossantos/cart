@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {  Router,  ParamMap, ActivatedRoute } from '@angular/router';
 import { PedidoMatriculaService } from '../pedido-matricula.service';
-import {MatInputModule} from '@angular/material/input';
+import { FormControl, Validators } from "@angular/forms";
 
 @Component({
   selector: 'app-form-matricula',
@@ -10,8 +10,15 @@ import {MatInputModule} from '@angular/material/input';
 })
 export class FormMatriculaComponent implements OnInit {
 
+
+  cidade = new FormControl('',[Validators.required]); 
+  endereco = new FormControl('',[Validators.required]);
+  estado = new FormControl('',[Validators.required]);
+  cartorioRegistro = new FormControl('',[Validators.required]);
+  numeroMatricula = new FormControl('',[Validators.required]);
+
   estados = ['SP', 'DF', 'MG'];
-  imovel: any = [];
+  imovel: any = {estado:""};
 
   constructor(
     private pedidoService: PedidoMatriculaService , 

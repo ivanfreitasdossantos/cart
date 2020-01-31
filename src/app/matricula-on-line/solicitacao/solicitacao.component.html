@@ -11,16 +11,20 @@
       <form class="example-form">
 
         <mat-form-field class="full-width" >
-          <input matInput placeholder="Nome" [(ngModel)]="model.nomeSolicitante"  value="Sushi" [ngModelOptions]="{standalone: true}">
+          <input matInput placeholder="Nome" name="nome" [formControl] = "nome" [(ngModel)]="model.nomeSolicitante" >
         </mat-form-field>
-        
+        <!-- <span *ngIf="nome.invalid" [ngClass]="'error'" > Nome necessário com máximo de 15 caracteres. </span>  -->
+       
+       
         <mat-form-field class="full-width">
-          <input matInput placeholder="Email" [(ngModel)]="model.email" name="email"  aria-describedby="email" [ngModelOptions]="{standalone: true}">
+          <input matInput placeholder="Email"   [formControl]="email" [(ngModel)]="model.email" name="email"  aria-describedby="email" >
         </mat-form-field>
+      <!--   <span *ngIf="nome.invalid" [ngClass]="'error'" > Nome necessário com máximo de 15 caracteres. </span>  -->
 
         <mat-form-field class="full-width">
-          <input matInput placeholder="Celular" [(ngModel)]="model.celular" name="celular"  id="celular" aria-describedby="celular" [ngModelOptions]="{standalone: true}">
+          <input matInput placeholder="Celular"  [formControl]="celular" [(ngModel)]="model.celular" aria-describedby="celular" >
         </mat-form-field>
+        <!-- <span *ngIf="nome.invalid" [ngClass]="'error'" > Nome necessário com máximo de 15 caracteres. </span>  -->
 
         <div class="col-12 text-right">
             <button type="button" class="btn btn-primary" (click)="adicionarEndereco()">Proximo Passo</button>

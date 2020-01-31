@@ -1,18 +1,19 @@
 <div class="row">
-    <div class="col s12 m6">
-        <h5>Dados do Pedido</h5>
-    </div>    
-</div>
+        <div class="col-12">
+          <h3 class="mt-10 titulo-pagina">Pedido</h3>
+          <p>Dados do Pedido</p>
+        </div>
+    </div>
 <div class="row">
     <div class="col s12 m6">
         
-        <label>Nome Solicitante:</label> <br> {{solicitacao.nomeSolicitante}} 
+        <label class="fs-12 label-detalhes">Nome Solicitante:</label> <br> {{solicitacao.nomeSolicitante}} 
         <hr class="my-2">
         
-        <label>Email:</label> <br> {{solicitacao.email}} 
+        <label class="fs-12 label-detalhes">Email:</label> <br> {{solicitacao.email}} 
         <hr class="my-2">
 
-        <label>Celular:</label> <br> {{solicitacao.celular}}
+        <label class="fs-12 label-detalhes">Celular:</label> <br> {{solicitacao.celular}}
          <hr class="my-2">
          
     </div>        
@@ -22,43 +23,44 @@
             <h6>Matriculas Solicitadas</h6>
         </div>   -->  
 </div>
-<div class="row">
+<div class="row mt-4">
 
         <div class="col-12">
 
             <div class="row">
-                    <div class="col-6"><h6>Matriculas Solicitadas</h6></div>
+                    <div class="col-6"><h6>Itens Solicitados</h6></div>
                  <div class="col-6 text-right">
                     <a class="" rel="noopener" [routerLink]="['/form-matricula']"> + Nova Matrícula </a>
                  </div>
-            </div>
-           
-            <table class="table table-sm">
-                <thead>
-                        <tr>
-                            <th scope="col">N. Matricula</th>
-                            <th scope="col"> </th>
-
-                        </tr>
-                        </thead>
-                <tbody>
-                    <tr  *ngFor="let imovel of solicitacao.listaImoveis">
-                    <td class="">
-                        {{ imovel.endereco}}
-                    </td>
-                    <td class="">
-                            <a class="" style="font-size: 8px;"> <i class="far fa-edit fa-2x"></i> </a>
-                            <a class="" style="font-size: 8px;"> <i class="far fa-trash-alt fa-2x"></i> </a>
-                    </td>
-                    </tr>
-    
-                </tbody>
-            </table>
+             </div>    
              
         </div>        
 </div>
 
-<div class="row">
+<div class="">
+        <ul class="list-group" >
+            <li class="list-group-item" *ngFor="let imovel of solicitacao.listaImoveis">
+                 <div class="row">
+                     <div class="col-8">
+                            {{ imovel.endereco}}
+                     </div>
+                     <div class="col-2">
+                            <a class="" style="font-size: 8px;" (click)="editar(imovel)"> <i class="far fa-edit fa-2x"></i> </a>
+                          
+                     </div>    
+                     <div class="col-2">
+                            <a class="" style="font-size: 8px;" (click)="remover(imovel)"> <i class="far fa-trash-alt fa-2x"></i> </a>
+                     </div>
+                 </div>
+                
+            </li>
+            
+        </ul>
+
+      
+</div>
+
+<div class="row mt-4">
     <div class="col-6 text-center">
         <button type="button" class="btn btn-primary" (click)="finalizar()">Finalizar</button>
     </div>

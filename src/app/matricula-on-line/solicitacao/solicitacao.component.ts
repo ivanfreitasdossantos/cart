@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ConditionalExpr } from '@angular/compiler';
 import { PedidoMatriculaService } from '../pedido-matricula.service';
+import { FormControl, Validators } from "@angular/forms";
 
 
 @Component({
@@ -13,6 +14,12 @@ export class Solicitacao implements OnInit{
 
   title = 'cartorio-facil-app';
   estados = ['SP', 'DF', 'MG'];
+
+  nome = new FormControl('', [Validators.required]);
+  email = new FormControl('', [Validators.required, Validators.email]);
+  celular = new FormControl('', [Validators.required]);
+
+
   pedido: any = []; 
   imovel: any = [];
 
@@ -29,7 +36,6 @@ export class Solicitacao implements OnInit{
   ngOnInit() {
   
   }
-
 
 
   adicionarEndereco() {

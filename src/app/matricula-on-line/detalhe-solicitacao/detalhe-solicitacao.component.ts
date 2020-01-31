@@ -22,4 +22,8 @@ export class DetalheSolicitacaoComponent implements OnInit {
   ngOnInit() {
   }
 
+  editar(item){
+    this.router.navigate(['/form-matricula', {item: item }]);
+  }
+
 }
